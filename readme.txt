@@ -1,70 +1,65 @@
-=== Athena Lead Rotation ===
-Contributors: athena
-Tags: leads, fluent-forms, fluentcrm, round-robin, sdr
-Requires at least: 5.8
-Tested up to: 6.6
-Requires PHP: 7.4
-Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+# Athena Lead Rotation
 
-== Description ==
+A custom WordPress plugin that automatically distributes incoming leads among SDRs using a round-robin assignment system integrated with Fluent Forms and FluentCRM.
 
-🇧🇷 Português
+## Overview
 
-Distribui automaticamente os leads recebidos via Fluent Forms entre uma lista de SDRs cadastrados, aplicando a tag correspondente no FluentCRM em sistema de rodízio (round-robin).
+Athena Lead Rotation was developed to automate lead assignment and ensure fair distribution among sales representatives (SDRs).
 
-Funcionalidades:
+When a lead is submitted through Fluent Forms, the plugin automatically identifies the corresponding contact in FluentCRM and applies the SDR tag based on the next position in the rotation queue.
 
-* Captura submissões do Fluent Forms (hooks moderno e legado)
-* Agenda o processamento via WP-Cron (5 segundos após o envio)
-* Localiza o contato no FluentCRM pelo e-mail
-* Aplica a tag do próximo SDR na fila em sistema de rodízio
-* Painel em Configurações > Lead Rotation com status do rodízio e reset manual
+This eliminates manual lead assignment and guarantees balanced lead distribution across the sales team.
 
-🇺🇸 English
+## Features
 
-Automatically distributes leads submitted through Fluent Forms among registered SDRs, applying the corresponding FluentCRM tag using a round-robin assignment system.
+* Automatic lead distribution (Round-Robin)
+* Fluent Forms integration
+* FluentCRM integration
+* Delayed processing using WP-Cron
+* SDR rotation tracking
+* Manual rotation reset
+* WordPress admin dashboard
+* Email-based contact matching
+* Support for modern and legacy Fluent Forms hooks
 
-Features:
+## How It Works
 
-* Captures Fluent Forms submissions (modern and legacy hooks)
-* Schedules processing via WP-Cron (5 seconds after submission)
-* Finds the contact in FluentCRM by email address
-* Assigns the next SDR tag in the rotation queue
-* Admin panel under Settings > Lead Rotation with rotation status and manual reset
+1. A visitor submits a form through Fluent Forms.
+2. The plugin schedules a background task.
+3. The contact is located inside FluentCRM.
+4. The next SDR in the rotation queue is selected.
+5. The corresponding FluentCRM tag is applied.
+6. The rotation index is updated for the next lead.
 
-== Requirements ==
+## Tech Stack
 
-🇧🇷 Português
-
+* PHP
+* WordPress
 * Fluent Forms
 * FluentCRM
+* WP-Cron
 
-🇺🇸 English
+## Use Case
 
-* Fluent Forms
-* FluentCRM
+Designed for businesses that need automatic lead routing between multiple SDRs without requiring a CRM administrator to manually assign contacts.
 
-== Installation ==
+## Project Highlights
 
-🇧🇷 Português
+* Custom WordPress plugin development
+* CRM automation
+* Lead routing logic
+* Sales operations workflow automation
+* Marketing technology integration
 
-1. Envie a pasta do plugin para `/wp-content/plugins/`
-2. Ative o plugin no painel do WordPress
-3. Ajuste a lista de SDRs (nome e tag_id) na função `alr_get_sdrs()`
-4. Acesse Configurações > Lead Rotation para acompanhar o status
+## Author
 
-🇺🇸 English
+Rayanne Araújo
 
-1. Upload the plugin folder to `/wp-content/plugins/`
-2. Activate the plugin from the WordPress admin panel
-3. Configure the SDR list (name and tag_id) inside the `alr_get_sdrs()` function
-4. Go to Settings > Lead Rotation to monitor the rotation status
+WordPress Developer | CRO Specialist | Automation Developer
 
-== Changelog ==
+GitHub: https://github.com/rayannearaujo
+LinkedIn: https://linkedin.com/in/rayannearaujos
 
-= 1.0.0 =
+## License
 
-* Initial release
-* Versão inicial
+GPL v2 or later
